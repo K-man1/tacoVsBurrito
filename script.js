@@ -40,13 +40,16 @@ function givePoints(numberOfPoints, playerCards) {
     if (turn == 1) {
         p1Score = p1Score + numberOfPoints
         cards1.textContent = playerCards
-    } else if (turn == 2) {
+    } 
+    else if (turn == 2) {
         p2Score = p2Score + numberOfPoints
         cards2.textContent = playerCards
-    } else if (turn == 3) {
+    }
+    else if (turn == 3) {
         p3Score = p3Score + numberOfPoints
         cards3.textContent = playerCards
-    } else if (turn == 4) {
+    } 
+    else if (turn == 4) {
         p4Score = p4Score + numberOfPoints
         cards4.textContent = playerCards
     }
@@ -71,7 +74,8 @@ function giveCard() {
         item3.style.display = "none"
         item4.style.display = "none"
 
-    } else if (turn === 2) {
+    } 
+    else if (turn === 2) {
         p2Cards.push(card)
         cards2.textContent = p2Cards
         turn++ //Increase the turn
@@ -80,7 +84,8 @@ function giveCard() {
         item3.style.display = "block"
         item4.style.display = "none"
 
-    } else if (turn === 3) {
+    } 
+    else if (turn === 3) {
         p3Cards.push(card)
         cards3.textContent = p3Cards
         turn++ //Increase the turn
@@ -90,7 +95,8 @@ function giveCard() {
         item2.style.display = "none"
         item4.style.display = "block"
 
-    } else if (turn === 4) {
+    } 
+    else if (turn === 4) {
         p4Cards.push(card)
         cards4.textContent = p4Cards
         turn = 1 //Set the turn
@@ -116,10 +122,18 @@ turn = 1
 
 
 // Add event listeners for the player buttons
-document.getElementById("player1Button").addEventListener("click", function() { selectPlayer(1) });
-document.getElementById("player2Button").addEventListener("click", function() { selectPlayer(2) });
-document.getElementById("player3Button").addEventListener("click", function() { selectPlayer(3) });
-document.getElementById("player4Button").addEventListener("click", function() { selectPlayer(4) });
+document.getElementById("player1Button").addEventListener("click", function() {
+    selectPlayer(1) 
+});
+document.getElementById("player2Button").addEventListener("click", function() {
+    selectPlayer(2)
+});
+document.getElementById("player3Button").addEventListener("click", function() {
+    selectPlayer(3)
+});
+document.getElementById("player4Button").addEventListener("click", function() {
+    selectPlayer(4)
+});
 
 let selectedCardType = ""
 let selectedPoints = ""
@@ -136,19 +150,19 @@ function playCard(playerCards, cardType, points) {
     }
     if (cardFound == 'true') {
         playerCards.splice(index, 1);
-
         // Show the player selection buttons
         document.getElementById("playerButtons").style.display = "block"
         selectedCardType = cardType
         selectedPoints = points
-    } else {
+    } 
+    else {
         window.alert("Don't lie!")
     }
 }
 
 function selectPlayer(playerNumber) {
     // Hide the player selection buttons
-    document.getElementById("playerButtons").style.display = "none";
+    document.getElementById("playerButtons").style.display = "none"
 
     // Update the score of the chosen player
     if (playerNumber === 1) {
@@ -188,7 +202,7 @@ function selectPlayer(playerNumber) {
     selectedPoints = ""
 
     // Update the score display
-    updateScore();
+    updateScore()
 }
 
 // Example usage with buttons
